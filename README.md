@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YourMeals.in Landing Page
 
-## Getting Started
+A modern, high-performance landing page for YourMeals.in cloud kitchen, built with Next.js 15, Tailwind CSS, Framer Motion, and Sanity.io.
 
-First, run the development server:
+## Features
+- **Antigravity Aesthetic**: Floating elements, smooth parallax, and glassmorphism.
+- **Sanity CMS**: Fully dynamic content for Menu, Plans, and Testimonials.
+- **Responsive**: Mobile-first design that looks great on all devices.
+- **Performance**: Optimized images and code-splitting.
+
+## Setup Instructions
+
+### 1. Environment Variables
+Create a `.env.local` file in the root directory and add your Sanity credentials:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2024-02-15
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Sanity Studio Setup
+To run the Sanity Studio locally:
+```bash
+npx sanity dev
+```
+Or access the embedded studio at `http://localhost:3000/studio`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Run Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) to see the site.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment on Vercel
 
-## Learn More
+1. **Push to GitHub**:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   # Add your remote origin
+   # git remote add origin ...
+   # git push -u origin main
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Deploy**:
+   - Go to [Vercel Dashboard](https://vercel.com).
+   - Click "Add New Project" and import your repository.
+   - Vercel will automatically detect Next.js.
+   - **Important**: Add the Environment Variables (`NEXT_PUBLIC_SANITY_PROJECT_ID`, etc.) in the Vercel project settings.
+   - Click "Deploy".
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Sanity CORS**:
+   - Go to your Sanity project dashboard (manage.sanity.io).
+   - Add your Vercel domain (e.g., `https://yourmeals.vercel.app`) to the **CORS Origins** list.
+   - Add `http://localhost:3000` for local development.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Content Management
+- Go to `/studio` on your deployed site or run `npx sanity dev` locally.
+- Create "Menu Item" documents to populate the menu.
+- Create "Plan" documents for subscriptions.
+- Create "Testimonials" for the reviews section.
