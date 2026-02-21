@@ -43,7 +43,7 @@ export function About() {
                     className="text-center mb-10 md:mb-16"
                 >
                     <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-                        Why <span className="text-gradient">YourMeals?</span>
+                        Why <span className="text-gradient">YOURMEALS?</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         We are a cloud kitchen in Jhargram serving delicious, homely meals for busy professionals and students.

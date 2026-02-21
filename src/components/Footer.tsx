@@ -94,14 +94,14 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3 text-muted-foreground">
                                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                                <span>hello@yourmeals.in</span>
+                                <span>yourmealskitchen@gmail.com</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-                    <p>&copy; {new Date().getFullYear()} YourMeals.in. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} YOURMEALS.IN. All rights reserved.</p>
                     <p className="flex items-center gap-1">
                         Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by{' '}
                         <Link

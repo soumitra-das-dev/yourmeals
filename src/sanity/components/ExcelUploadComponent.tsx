@@ -41,6 +41,9 @@ export function ExcelUploadComponent() {
                 try {
                     // Map Excel columns to Sanity schema fields
                     // Assuming columns like: Name, Description, Price, Spicy Level, Platform, Popular, Swiggy Link, Zomato Link
+                    const tagsRaw = row['Tags'] || row['tags'] || '';
+                    const tagsArray = tagsRaw ? tagsRaw.split(',').map((t: string) => t.trim()).filter(Boolean) : [];
+
                     const doc = {
                         _type: 'menuItem',
                         name: row['Name'] || row['name'] || 'Unnamed Item',
@@ -51,6 +54,7 @@ export function ExcelUploadComponent() {
                         popular: Boolean(row['Popular'] || row['popular'] || false),
                         swiggyLink: row['Swiggy Link'] || row['swiggyLink'] || '',
                         zomatoLink: row['Zomato Link'] || row['zomatoLink'] || '',
+                        tags: tagsArray,
                     }
 
                     // Use client.create to add new document
@@ -89,7 +93,7 @@ export function ExcelUploadComponent() {
                 <Heading as="h1" size={4}>Bulk Upload Menu Items</Heading>
                 <Text muted>
                     Upload an Excel (.xlsx) file to quickly import menu items into your Sanity Studio.
-                    The Excel file should have columns matching your schema: Name, Description, Price, Spicy Level, Platform, Popular, Swiggy Link, Zomato Link.
+                    The Excel file should have columns matching your schema: Name, Description, Price, Spicy Level, Platform, Popular, Tags, Swiggy Link, Zomato Link. (Tags can be comma-separated like "Veg, Snacks").
                 </Text>
 
                 <Box marginTop={4}>

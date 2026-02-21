@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 import { motion } from 'framer-motion';
 import { urlFor } from '@/sanity/lib/image';
 import { Flame, Star, ExternalLink } from 'lucide-react';
@@ -24,7 +26,29 @@ export default function MenuGrid({
     title = "Our Featured Menu",
     subtitle = "Freshly prepared, hot, and spicy meals delivered to your doorstep.",
 }: MenuGridProps) {
-    const visibleItems = limit ? items.slice(0, limit) : items;
+    const [activeCategory, setActiveCategory] = useState<string>('All');
+    const [activeDietary, setActiveDietary] = useState<string>('All');
+
+    // Filter items based on selected tags
+    const filteredItems = items.filter(item => {
+        const itemTags = item.tags || [];
+
+        // Category match
+        let categoryMatch = activeCategory === 'All';
+        if (!categoryMatch) {
+            categoryMatch = itemTags.includes(activeCategory);
+        }
+
+        // Dietary match
+        let dietaryMatch = activeDietary === 'All';
+        if (!dietaryMatch) {
+            dietaryMatch = itemTags.includes(activeDietary);
+        }
+
+        return categoryMatch && dietaryMatch;
+    });
+
+    const visibleItems = limit ? filteredItems.slice(0, limit) : filteredItems;
 
     return (
         <section id="menu" className="py-12 md:py-24 bg-linear-to-b from-white to-orange-50/30">
@@ -44,6 +68,39 @@ export default function MenuGrid({
                             {subtitle}
                         </p>
                     </motion.div>
+                </div>
+
+                {/* Filters */}
+                <div className="flex flex-col items-center gap-4 mb-10 w-full">
+                    {/* Category Filter */}
+                    <div className="flex flex-wrap justify-center gap-2">
+                        {['All', 'Snacks', 'Starter', 'Main Course'].map(cat => (
+                            <button
+                                key={cat}
+                                onClick={() => setActiveCategory(cat)}
+                                className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeCategory === cat ? 'bg-brand-orange text-white shadow-md' : 'bg-white border border-orange-100 text-gray-700 hover:bg-orange-50 hover:border-brand-orange/50'}`}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+                    {/* Dietary Filter */}
+                    <div className="flex flex-wrap justify-center gap-2">
+                        {['All', 'Veg', 'Non-Veg'].map(diet => (
+                            <button
+                                key={diet}
+                                onClick={() => setActiveDietary(diet)}
+                                className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeDietary === diet
+                                        ? (diet === 'Veg' ? 'bg-green-600 text-white shadow-md' : diet === 'Non-Veg' ? 'bg-red-600 text-white shadow-md' : 'bg-gray-800 text-white shadow-md')
+                                        : 'bg-white border text-gray-700 hover:bg-gray-50'
+                                    }`}
+                            >
+                                {diet === 'Veg' && <span className="mr-1 inline-block w-2 h-2 rounded-full bg-green-500"></span>}
+                                {diet === 'Non-Veg' && <span className="mr-1 inline-block w-2 h-2 rounded-full bg-red-500"></span>}
+                                {diet}
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 {visibleItems.length === 0 ? (

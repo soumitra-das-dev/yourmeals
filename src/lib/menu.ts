@@ -10,6 +10,7 @@ export interface MenuItem {
     popular?: boolean;
     swiggyLink?: string;
     zomatoLink?: string;
+    tags?: string[];
 }
 
 export async function getMenuItems(): Promise<MenuItem[]> {

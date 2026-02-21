@@ -67,6 +67,22 @@ export default defineType({
             initialValue: false,
         }),
         defineField({
+            name: 'tags',
+            title: 'Tags (Category & Dietary)',
+            type: 'array',
+            of: [{ type: 'string' }],
+            options: {
+                list: [
+                    { title: 'Veg', value: 'Veg' },
+                    { title: 'Non-Veg', value: 'Non-Veg' },
+                    { title: 'Snacks', value: 'Snacks' },
+                    { title: 'Starter', value: 'Starter' },
+                    { title: 'Main Course', value: 'Main Course' },
+                ],
+            },
+            description: 'Select tags for filtering (e.g. Veg, Starter)',
+        }),
+        defineField({
             name: 'swiggyLink',
             title: 'Swiggy Order Link',
             type: 'url',
