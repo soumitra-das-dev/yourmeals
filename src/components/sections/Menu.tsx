@@ -116,16 +116,28 @@ export function Menu() {
                     transition={{ delay: 0.6 }}
                     className="text-center"
                 >
-                    <Button
-                        size="lg"
-                        variant="outline"
-                        className="border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white font-semibold"
-                        asChild
-                    >
-                        <a href="https://www.swiggy.com" target="_blank" rel="noopener noreferrer">
-                            View Full Menu on Swiggy & Zomato
-                        </a>
-                    </Button>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <Button
+                            size="lg"
+                            variant="outline"
+                            className="border-2 border-[#FC8019] text-[#FC8019] hover:bg-[#FC8019] hover:text-white font-semibold w-full sm:w-auto px-8"
+                            asChild
+                        >
+                            <a href="https://www.swiggy.com/direct/brand/758823?source=swiggy-direct&subSource=generic" target="_blank" rel="noopener noreferrer">
+                                View Menu on Swiggy
+                            </a>
+                        </Button>
+                        <Button
+                            size="lg"
+                            variant="outline"
+                            className="border-2 border-[#CB202D] text-[#CB202D] hover:bg-[#CB202D] hover:text-white font-semibold w-full sm:w-auto px-8"
+                            asChild
+                        >
+                            <a href="https://zoma.to/r/21553448" target="_blank" rel="noopener noreferrer">
+                                View Menu on Zomato
+                            </a>
+                        </Button>
+                    </div>
                 </motion.div>
             </div>
         </section>

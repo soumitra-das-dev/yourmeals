@@ -57,9 +57,18 @@ export function Navbar() {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full"></span>
                             </Link>
                         ))}
-                        <Button className="bg-brand-orange hover:bg-brand-orange-dark text-white rounded-full px-6">
-                            Order Now
-                        </Button>
+                        <div className="flex items-center gap-3">
+                            <Button className="bg-[#FC8019] hover:bg-orange-600 text-white rounded-full px-5" asChild>
+                                <a href="https://www.swiggy.com/direct/brand/758823?source=swiggy-direct&subSource=generic" target="_blank" rel="noopener noreferrer">
+                                    Swiggy
+                                </a>
+                            </Button>
+                            <Button className="bg-[#CB202D] hover:bg-red-700 text-white rounded-full px-5" asChild>
+                                <a href="https://zoma.to/r/21553448" target="_blank" rel="noopener noreferrer">
+                                    Zomato
+                                </a>
+                            </Button>
+                        </div>
                     </nav>
 
                     {/* Mobile Menu Toggle */}
@@ -91,9 +100,18 @@ export function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
-                        <Button className="bg-brand-orange hover:bg-brand-orange-dark rounded-md text-white text-lg py-6 w-full mt-4">
-                            Order Now
-                        </Button>
+                        <div className="flex gap-4 mt-4 w-full">
+                            <Button className="bg-[#FC8019] hover:bg-orange-600 rounded-md text-white text-lg py-6 w-full" asChild>
+                                <a href="https://www.swiggy.com/direct/brand/758823?source=swiggy-direct&subSource=generic" target="_blank" rel="noopener noreferrer">
+                                    Swiggy
+                                </a>
+                            </Button>
+                            <Button className="bg-[#CB202D] hover:bg-red-700 rounded-md text-white text-lg py-6 w-full" asChild>
+                                <a href="https://zoma.to/r/21553448" target="_blank" rel="noopener noreferrer">
+                                    Zomato
+                                </a>
+                            </Button>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

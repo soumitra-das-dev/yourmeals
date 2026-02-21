@@ -97,7 +97,7 @@ export function Hero({
                         className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 max-w-lg mx-auto lg:mx-0"
                     >
                         Fresh, delicious Indian cuisine for working professionals & students.
-                        Order via <span className="font-semibold text-brand-orange">Swiggy</span>, <span className="font-semibold text-brand-orange">Zomato</span>, or check our menu below.
+                        Order via <a href="https://www.swiggy.com/direct/brand/758823?source=swiggy-direct&subSource=generic" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-orange hover:underline">Swiggy</a>, <a href="https://zoma.to/r/21553448" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-orange hover:underline">Zomato</a>, or check our menu below.
                     </motion.p>
 
                     <motion.div
@@ -162,10 +162,11 @@ export function Hero({
                         <div className="aspect-square absolute inset-4 bg-orange-100/50 rounded-3xl flex items-center justify-center shadow-2xl overflow-hidden">
                             <Image
                                 src="https://images.unsplash.com/photo-1625398407796-82650a8c135f?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Delicious Chicken Curry"
+                                alt="Hero Image"
                                 fill
                                 className="object-cover"
                                 priority
+                                unoptimized={true}
                             />
                         </div>
                     </motion.div>

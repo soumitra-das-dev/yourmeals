@@ -21,7 +21,7 @@ export default function OrderSection() {
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                         <a
-                            href="https://swiggy.com"
+                            href="https://www.swiggy.com/direct/brand/758823?source=swiggy-direct&subSource=generic"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto px-8 py-5 bg-[#FC8019] text-white rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
@@ -29,7 +29,7 @@ export default function OrderSection() {
                             Order on Swiggy
                         </a>
                         <a
-                            href="https://zomato.com"
+                            href="https://zoma.to/r/21553448"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto px-8 py-5 bg-[#CB202D] text-white rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
@@ -41,7 +41,7 @@ export default function OrderSection() {
                     <div className="mt-12 flex flex-col items-center">
                         <p className="text-muted-foreground mb-4">Looking for a monthly subscription?</p>
                         <a
-                            href="https://wa.me/919876543210?text=Hi%20YourMeals!%20I'm%20interested%20in%20a%20monthly%20plan."
+                            href="https://wa.me/919064967577?text=Hi%20YourMeals!%20I'm%20interested%20in%20a%20monthly%20plan."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 text-primary font-bold hover:underline"

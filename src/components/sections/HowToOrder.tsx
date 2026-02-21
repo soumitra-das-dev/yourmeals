@@ -22,8 +22,8 @@ const steps = [
     {
         icon: MessageCircle,
         step: '3',
-        title: 'Or WhatsApp Us',
-        description: 'Message us directly for monthly plans, bulk orders, or custom meal preferences',
+        title: 'Or Call / WhatsApp Us',
+        description: 'Call or message us directly for monthly plans, bulk orders, or custom meal preferences',
         color: 'bg-green-500',
     },
     {

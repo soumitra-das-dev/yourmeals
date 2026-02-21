@@ -1,6 +1,6 @@
 'use client';
 
-import { Utensils, Instagram, MessageCircle, MapPin, Mail, Phone, ArrowRight, Heart } from 'lucide-react';
+import { Utensils, Instagram, MessageCircle, MapPin, Mail, Phone, ArrowRight, Heart, Facebook, Twitter, Youtube, Linkedin, AtSign } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -23,14 +23,34 @@ export default function Footer() {
                         <p className="text-muted-foreground leading-relaxed">
                             Bringing the authentic taste of homemade Indian cuisine to your doorstep. Fresh, spicy, and delivered with love in Jhargram.
                         </p>
-                        <div className="flex gap-4">
-                            <Link href="https://www.instagram.com/yourmeals.in" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 shadow-sm hover:shadow-md">
+                        <div className="flex flex-wrap gap-4">
+                            <Link href="https://www.instagram.com/yourmeals.in" title="Instagram" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-pink-500 hover:border-pink-500 transition-all duration-300 shadow-sm hover:shadow-md">
                                 <Instagram className="w-5 h-5" />
                                 <span className="sr-only">Instagram</span>
                             </Link>
-                            <Link href="https://wa.me/919064967577" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-green-500 hover:border-green-500 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <Link href="https://wa.me/919064967577" title="WhatsApp" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-green-500 hover:border-green-500 transition-all duration-300 shadow-sm hover:shadow-md">
                                 <MessageCircle className="w-5 h-5" />
                                 <span className="sr-only">WhatsApp</span>
+                            </Link>
+                            <Link href="https://www.facebook.com/share/1GNZAucfKd/" title="Facebook" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-blue-600 hover:border-blue-600 transition-all duration-300 shadow-sm hover:shadow-md">
+                                <Facebook className="w-5 h-5" />
+                                <span className="sr-only">Facebook</span>
+                            </Link>
+                            <Link href="https://www.threads.com/@yourmeals.in" title="Threads" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-gray-900 dark:hover:text-white hover:border-gray-900 dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-md">
+                                <AtSign className="w-5 h-5" />
+                                <span className="sr-only">Threads</span>
+                            </Link>
+                            <Link href="https://x.com/Yourmeals_in" title="X (Twitter)" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-md">
+                                <Twitter className="w-5 h-5" />
+                                <span className="sr-only">X (Twitter)</span>
+                            </Link>
+                            <Link href="https://www.youtube.com/@yourmealskitchen" title="YouTube" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-red-500 hover:border-red-500 transition-all duration-300 shadow-sm hover:shadow-md">
+                                <Youtube className="w-5 h-5" />
+                                <span className="sr-only">YouTube</span>
+                            </Link>
+                            <Link href="https://www.linkedin.com/company/yourmeals/" title="LinkedIn" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-blue-500 hover:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-md">
+                                <Linkedin className="w-5 h-5" />
+                                <span className="sr-only">LinkedIn</span>
                             </Link>
                         </div>
                     </div>
@@ -43,8 +63,8 @@ export default function Footer() {
                                 { name: 'Menu', href: '/menu' },
                                 { name: 'About Us', href: '/#about' },
                                 { name: 'Contact', href: '/#contact' },
-                                { name: 'Order on Swiggy', href: 'https://www.swiggy.com', external: true },
-                                { name: 'Order on Zomato', href: 'https://www.zomato.com', external: true },
+                                { name: 'Order on Swiggy', href: 'https://www.swiggy.com/direct/brand/758823?source=swiggy-direct&subSource=generic', external: true },
+                                { name: 'Order on Zomato', href: 'https://zoma.to/r/21553448', external: true },
                             ].map((item) => (
                                 <li key={item.name}>
                                     <Link

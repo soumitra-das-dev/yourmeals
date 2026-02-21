@@ -11,11 +11,20 @@ import { structureTool } from 'sanity/structure'
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from './src/sanity/env'
 import { schema } from './src/sanity/schema'
+import { myTheme } from './src/sanity/theme'
+import { CustomLogo } from './src/sanity/components/CustomLogo'
+import { excelUploadTool } from './src/sanity/components/ExcelUploadTool'
 
 export default defineConfig({
     basePath: '/studio',
     projectId: projectId || 'your-project-id',
     dataset: dataset || 'production',
+    theme: myTheme,
+    studio: {
+        components: {
+            logo: CustomLogo,
+        },
+    },
     // Add and edit the content schema in the './sanity/schema' folder
     schema,
     plugins: [
@@ -24,4 +33,5 @@ export default defineConfig({
         // https://www.sanity.io/docs/the-vision-plugin
         visionTool({ defaultApiVersion: apiVersion }),
     ],
+    tools: [excelUploadTool()],
 })
