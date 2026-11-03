@@ -12,60 +12,63 @@ export function Contact() {
     })
 
     return (
-        <section ref={ref} id="contact" className="section-padding bg-linear-to-br from-brand-orange to-brand-orange-dark text-white">
-            <div className="container">
+        <section ref={ref} id="contact" className="section-padding bg-brand-orange text-white relative">
+            <div className="container px-4 md:px-6 mx-auto max-w-5xl relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center max-w-3xl mx-auto"
                 >
-                    <h2 className="font-display text-3xl md:text-4xl lg:text-6xl font-bold mb-6">
+                    <div className="mb-3">
+                        <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-orange-100">
+                            Direct Kitchen Line
+                        </span>
+                    </div>
+                    <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
                         Ready to Order?
                     </h2>
-                    <p className="text-xl text-white/90 mb-12">
-                        Get in touch for monthly plans or order directly on Swiggy & Zomato
+                    <p className="text-lg sm:text-xl text-white/95 mb-10 max-w-xl mx-auto leading-relaxed">
+                        Order your lunch or dinner directly through WhatsApp, or call us for custom catering and monthly mess plans in Jhargram.
                     </p>
 
-                    <div className="grid md:grid-cols-2 gap-6 mb-12">
+                    <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-12">
                         <Button
                             size="lg"
-                            variant="secondary"
-                            className="h-16 text-lg font-semibold bg-white text-brand-orange hover:bg-orange-50"
+                            className="h-16 text-base sm:text-lg font-bold bg-white text-brand-orange hover:bg-orange-50 rounded-xl transition-colors"
                             asChild
                         >
-                            <a href="https://wa.me/919064967577" target="_blank" rel="noopener noreferrer">
-                                <MessageCircle className="mr-2 h-6 w-6" />
-                                WhatsApp: +91 90649 67577
+                            <a href="https://wa.me/919064967577?text=Hello%20YourMeals!%20I%20would%20like%20to%20order." target="_blank" rel="noopener noreferrer">
+                                <MessageCircle className="mr-2 h-6 w-6 text-emerald-600" />
+                                <span>WhatsApp: +91 90649 67577</span>
                             </a>
                         </Button>
 
                         <Button
                             size="lg"
-                            variant="secondary"
-                            className="h-16 text-lg font-semibold bg-white/10 text-white hover:bg-white/20 border-2 border-white/20 backdrop-blur-sm"
+                            className="h-16 text-base sm:text-lg font-bold bg-brand-orange-dark text-white hover:bg-brand-orange-dark/90 border border-white/20 rounded-xl transition-colors"
                             asChild
                         >
                             <a href="tel:+919064967577">
-                                <Phone className="mr-2 h-6 w-6" />
-                                Call: +91 90649 67577
+                                <Phone className="mr-2 h-5 w-5" />
+                                <span>Call: +91 90649 67577</span>
                             </a>
                         </Button>
                     </div>
 
-                    <div className="flex flex-col items-center gap-4 text-white/80 text-center">
-                        <div className="flex items-start gap-2">
-                            <MapPin className="w-5 h-5" />
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-white/95 text-sm">
+                        <div className="flex items-center gap-2">
+                            <MapPin className="w-4 h-4 shrink-0 text-orange-200" />
                             <span>Near Barnali Playground, Uttar Bamda, Jhargram, 721507</span>
                         </div>
-                        <span className="hidden sm:inline">•</span>
+                        <span className="hidden sm:inline text-white/50">•</span>
                         <a
                             href="https://www.instagram.com/yourmeals.in"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 hover:text-white transition-colors"
+                            className="flex items-center gap-1.5 hover:text-white underline decoration-white/40 hover:decoration-white transition-colors"
                         >
-                            <Instagram className="w-5 h-5" />
+                            <Instagram className="w-4 h-4 text-orange-200" />
                             <span>@yourmeals.in</span>
                         </a>
                     </div>

@@ -1,5 +1,5 @@
 import { getMenuItems } from "@/lib/menu";
-import MenuGrid from "@/components/MenuGrid";
+import MenuGrid from "./MenuGrid";
 
 export const revalidate = 60;
 

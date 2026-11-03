@@ -1,13 +1,15 @@
-import HeroSection from '@/components/HeroSection'
-import { About } from '@/components/sections/About'
-import MenuSection from '@/components/MenuSection'
-import PlansSection from '@/components/PlansSection'
-import { HowToOrder } from '@/components/sections/HowToOrder'
-import TestimonialsSection from '@/components/TestimonialsSection'
-import { Contact } from '@/components/sections/Contact'
-import Footer from '@/components/Footer'
-import { Navbar } from '@/components/Navbar'
-import { BackToTop } from '@/components/BackToTop'
+import {
+  Navbar,
+  Footer,
+  BackToTop,
+  HeroSection,
+  About,
+  MenuSection,
+  PlansSection,
+  HowToOrder,
+  TestimonialsSection,
+  Contact,
+} from '@/components';
 
 export default function Home() {
   return (
@@ -23,5 +25,5 @@ export default function Home() {
       <Footer />
       <BackToTop />
     </main>
-  )
+  );
 }

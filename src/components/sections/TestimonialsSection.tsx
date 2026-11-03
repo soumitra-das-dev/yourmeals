@@ -1,5 +1,5 @@
 import { getTestimonials } from "@/lib/testimonials";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { Testimonials } from "./Testimonials";
 
 export const revalidate = 60;
 

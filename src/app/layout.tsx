@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter, Bebas_Neue } from 'next/font/google'
 import './globals.css'
+import { CartProvider } from '@/context/CartContext'
+import { CartDrawer } from '@/components'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -14,9 +16,9 @@ const bebas = Bebas_Neue({
 })
 
 export const metadata: Metadata = {
-  title: 'YourMeals - Homely Food Delivery in Jhargram | Order on Swiggy & Zomato',
-  description: 'Fresh, homely Indian meals for working professionals & students in Jhargram. Order delicious chicken curry, thalis & more on Swiggy, Zomato or direct delivery. Monthly plans available.',
-  keywords: ['food delivery Jhargram', 'cloud kitchen Jhargram', 'homely food', 'student meals', 'office lunch', 'YourMeals', 'Swiggy Jhargram', 'Zomato Jhargram'],
+  title: 'YourMeals - Homely Food Delivery in Jhargram | Fresh Indian Meals',
+  description: 'Fresh, delicious, home-cooked Indian meals for students and working professionals in Jhargram. Direct kitchen ordering via WhatsApp. Monthly plans available.',
+  keywords: ['food delivery Jhargram', 'cloud kitchen Jhargram', 'homely food Jhargram', 'student meals', 'office lunch', 'YourMeals', 'WhatsApp food order', 'tiffin service Jhargram'],
   authors: [{ name: 'YourMeals' }],
   metadataBase: new URL('https://yourmeals.in'),
   alternates: {
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://yourmeals.in',
     title: 'YourMeals - Homely Food Delivery in Jhargram',
-    description: 'Fresh, delicious Indian meals delivered to your doorstep. Perfect for working professionals & students.',
+    description: 'Fresh, delicious Indian meals delivered to your doorstep in Jhargram directly through WhatsApp.',
     siteName: 'YourMeals',
     images: [
       {
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'YourMeals - Homely Food Delivery in Jhargram',
-    description: 'Fresh Indian meals for working professionals & students',
+    description: 'Fresh Indian meals for working professionals & students in Jhargram',
     images: ['/og-image.png'],
   },
   robots: {
@@ -78,7 +80,10 @@ export default function RootLayout({
         <meta property="og:image:height" content="630" />
       </head>
       <body className={`${inter.variable} ${bebas.variable} font-sans antialiased`}>
-        {children}
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   )

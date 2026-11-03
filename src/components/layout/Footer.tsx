@@ -4,13 +4,13 @@ import { Utensils, Instagram, MessageCircle, MapPin, Mail, Phone, ArrowRight, He
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Footer() {
+export function Footer() {
     return (
         <footer className="bg-zinc-50 dark:bg-black py-20 border-t border-border/50 relative overflow-hidden">
             {/* Decorative Grid Background */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
 
-            <div className="container px-6 md:px-6 relative z-10">
+            <div className="container px-6 md:px-6 relative z-10 mx-auto max-w-7xl">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
                     {/* Brand Info */}
                     <div className="space-y-6">
@@ -61,10 +61,11 @@ export default function Footer() {
                             {[
                                 { name: 'Home', href: '/' },
                                 { name: 'Menu', href: '/menu' },
+                                { name: 'How to Order', href: '/#how-to-order' },
+                                { name: 'Meal Plans', href: '/#plans' },
                                 { name: 'About Us', href: '/#about' },
                                 { name: 'Contact', href: '/#contact' },
-                                { name: 'Order on Swiggy', href: 'https://www.swiggy.com/direct/brand/758823?source=swiggy-direct&subSource=generic', external: true },
-                                { name: 'Order on Zomato', href: 'https://zoma.to/r/21553448', external: true },
+                                { name: 'Order via WhatsApp', href: 'https://wa.me/919064967577?text=Hello%20YourMeals!%20I%20would%20like%20to%20order.', external: true },
                             ].map((item) => (
                                 <li key={item.name}>
                                     <Link
@@ -90,7 +91,13 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3 text-muted-foreground">
                                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                                <span>+91 90649 67577</span>
+                                <a href="tel:+919064967577" className="hover:text-primary transition-colors">+91 90649 67577</a>
+                            </li>
+                            <li className="flex items-center gap-3 text-muted-foreground">
+                                <MessageCircle className="w-5 h-5 text-emerald-600 shrink-0" />
+                                <a href="https://wa.me/919064967577" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">
+                                    WhatsApp: +91 90649 67577
+                                </a>
                             </li>
                             <li className="flex items-center gap-3 text-muted-foreground">
                                 <Mail className="w-5 h-5 text-primary shrink-0" />

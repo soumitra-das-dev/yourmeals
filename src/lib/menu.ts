@@ -8,8 +8,6 @@ export interface MenuItem {
     spicyLevel: string;
     image: any;
     popular?: boolean;
-    swiggyLink?: string;
-    zomatoLink?: string;
     tags?: string[];
 }
 
@@ -20,7 +18,7 @@ export async function getMenuItems(): Promise<MenuItem[]> {
             return menuItems || [];
         }
     } catch (error) {
-        console.error("Failed to fetch menu items:", error);
+        console.error("Failed to fetch menu items from Sanity:", error);
     }
     return [];
 }

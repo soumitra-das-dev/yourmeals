@@ -13,60 +13,35 @@ interface HeroProps {
 }
 
 export function Hero({
-    ctaText1 = 'View Menu on Website',
+    ctaText1 = 'Explore Menu',
     ctaLink1 = '#menu',
     ctaText2 = 'Order on WhatsApp',
-    ctaLink2 = 'https://wa.me/919064967577',
+    ctaLink2 = 'https://wa.me/919064967577?text=Hello%20YourMeals!%20I%20would%20like%20to%20place%20an%20order.',
 }: HeroProps) {
     const isExternalLink1 = ctaLink1.startsWith('http');
     const isExternalLink2 = ctaLink2.startsWith('http');
 
     return (
-        <section className="relative min-h-auto lg:min-h-dvh flex items-center justify-center overflow-hidden bg-white/50 pt-24 pb-12 lg:pb-20">
-            {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 90, 0],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear"
-                    }}
-                    className="absolute -top-1/2 -right-1/2 w-full h-full bg-brand-orange/5 rounded-full blur-3xl"
-                />
-            </div>
-
-            <div className="container px-6 md:px-6 relative z-10 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full">
+        <section className="relative min-h-auto lg:min-h-dvh flex items-center justify-center bg-white pt-24 pb-12 lg:pb-20">
+            <div className="container px-6 md:px-8 relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center h-full mx-auto max-w-7xl">
                 {/* Left content */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-center lg:text-left order-2 lg:order-1 lg:col-span-7 flex flex-col justify-center"
                 >
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        <span className="inline-block px-4 py-2 bg-brand-orange/10 text-brand-orange font-semibold rounded-full text-xs md:text-sm mb-4">
-                            🔥 Spicy & Homely
+                    <div className="mb-4">
+                        <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-brand-orange">
+                            Jhargram's Cloud Kitchen
                         </span>
-                    </motion.div>
+                    </div>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight"
-                    >
+                    <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 leading-[1.08] tracking-tight">
                         <span className="relative inline-block text-brand-orange-light">
                             <span className="relative z-10">Homely</span>
                             <svg
-                                className="absolute -bottom-2 left-0 w-full h-3 pointer-events-none"
+                                className="absolute -bottom-1 left-0 w-full h-3 pointer-events-none"
                                 viewBox="1 5 100 30"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -85,37 +60,26 @@ export function Hero({
                         Meals,
                         <br />
                         <span className="text-brand-orange">
-                            Delivered.
-
+                            Delivered Hot.
                         </span>
-                    </motion.h1>
+                    </h1>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 max-w-lg mx-auto lg:mx-0"
-                    >
-                        Fresh, delicious Indian cuisine for working professionals & students.
-                        Order via <a href="https://www.swiggy.com/direct/brand/758823?source=swiggy-direct&subSource=generic" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-orange hover:underline">Swiggy</a>, <a href="https://zoma.to/r/21553448" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-orange hover:underline">Zomato</a>, or check our menu below.
-                    </motion.p>
+                    <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Freshly cooked home-style Indian cuisine for working professionals & students in Jhargram.
+                        Direct kitchen orders, customized spice levels & monthly tiffin subscriptions.
+                    </p>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                        className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
-                    >
+                    <div className="flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start">
                         <Button
                             size="lg"
-                            className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold text-lg h-12 px-8 w-full sm:w-auto"
+                            className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold text-base h-12 px-7 rounded-xl transition-colors w-full sm:w-auto"
                             asChild
                         >
                             <a
                                 href={ctaLink1}
                                 {...(isExternalLink1 ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                             >
-                                <ShoppingBag className="mr-2 h-5 w-5" />
+                                <ShoppingBag className="mr-2 h-4 w-4" />
                                 {ctaText1}
                             </a>
                         </Button>
@@ -123,53 +87,53 @@ export function Hero({
                         <Button
                             size="lg"
                             variant="outline"
-                            className="border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white font-semibold text-lg h-12 px-8 w-full sm:w-auto"
+                            className="border-2 border-emerald-600 text-emerald-700 bg-white hover:bg-emerald-600 hover:text-white font-semibold text-base h-12 px-7 rounded-xl transition-colors w-full sm:w-auto"
                             asChild
                         >
                             <a
                                 href={ctaLink2}
                                 {...(isExternalLink2 ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                             >
-                                <MessageCircle className="mr-2 h-5 w-5" />
+                                <MessageCircle className="mr-2 h-4 w-4" />
                                 {ctaText2}
                             </a>
                         </Button>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.6 }}
-                        className="mt-6 flex flex-col md:flex-row items-center gap-2 md:gap-4 justify-center lg:justify-start"
-                    >
-                        <span className="text-gray-600 text-sm md:text-base">WhatsApp for monthly plans</span>
-                    </motion.div>
+                    {/* Quick highlights */}
+                    <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-gray-500 font-medium">
+                        <div className="flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span>Direct WhatsApp Orders</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-brand-orange"></span>
+                            <span>30–45 Mins Delivery</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+                            <span>Monthly Plans</span>
+                        </div>
+                    </div>
                 </motion.div>
 
-                {/* Right image */}
+                {/* Right image: Clear, honest food presentation */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative order-1 lg:order-2 flex justify-center items-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative order-1 lg:order-2 lg:col-span-5 flex justify-center items-center"
                 >
-                    <motion.div
-                        animate={{ y: [100, 0], opacity: [0, 1] }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                        className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-full lg:max-w-lg aspect-square"
-                    >
-                        <div className="absolute inset-0 bg-brand-orange/20 rounded-full blur-3xl opacity-50" />
-                        <div className="aspect-square absolute inset-4 bg-orange-100/50 rounded-3xl flex items-center justify-center shadow-2xl overflow-hidden">
-                            <Image
-                                src="https://images.unsplash.com/photo-1625398407796-82650a8c135f?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Hero Image"
-                                fill
-                                className="object-cover"
-                                priority
-                                unoptimized={true}
-                            />
-                        </div>
-                    </motion.div>
+                    <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden bg-orange-50 border border-orange-100">
+                        <Image
+                            src="https://images.unsplash.com/photo-1625398407796-82650a8c135f?q=80&w=800&auto=format&fit=crop"
+                            alt="Freshly cooked Indian home meals"
+                            fill
+                            priority
+                            className="object-cover"
+                            sizes="(max-width: 1024px) 80vw, 400px"
+                        />
+                    </div>
                 </motion.div>
             </div>
         </section>

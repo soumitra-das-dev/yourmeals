@@ -1,5 +1,5 @@
 import { getPlans } from "@/lib/plans";
-import { Plans } from "@/components/sections/Plans";
+import { Plans } from "./Plans";
 
 export const revalidate = 60;
 

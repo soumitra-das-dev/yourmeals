@@ -2,14 +2,14 @@ import { defineField, defineType } from 'sanity'
 
 export default defineType({
     name: 'menuItem',
-    title: 'Menu Item',
+    title: 'Menu Items',
     type: 'document',
     fields: [
         defineField({
             name: 'name',
-            title: 'Name',
+            title: 'Dish Name',
             type: 'string',
-            validation: (Rule) => Rule.required(),
+            validation: (rule) => rule.required(),
         }),
         defineField({
             name: 'description',
@@ -18,18 +18,18 @@ export default defineType({
         }),
         defineField({
             name: 'price',
-            title: 'Price (₹)',
+            title: 'Price (INR)',
             type: 'number',
-            validation: (Rule) => Rule.required().min(0),
+            validation: (rule) => rule.required().min(0),
         }),
         defineField({
             name: 'image',
-            title: 'Image',
+            title: 'Dish Image',
             type: 'image',
             options: {
                 hotspot: true,
             },
-            validation: (Rule) => Rule.required(),
+            validation: (rule) => rule.required(),
         }),
         defineField({
             name: 'spicyLevel',
@@ -47,28 +47,25 @@ export default defineType({
         }),
         defineField({
             name: 'platform',
-            title: 'Available Platform',
+            title: 'Ordering Platform',
             type: 'string',
             options: {
                 list: [
+                    { title: 'Direct WhatsApp', value: 'Direct' },
                     { title: 'All', value: 'All' },
-                    { title: 'Swiggy', value: 'Swiggy' },
-                    { title: 'Zomato', value: 'Zomato' },
-                    { title: 'Direct', value: 'Direct' },
                 ],
             },
-            initialValue: 'All',
+            initialValue: 'Direct',
         }),
         defineField({
             name: 'popular',
-            title: 'Popular',
+            title: 'Popular Dish',
             type: 'boolean',
-            description: 'Show a Popular badge on this item',
             initialValue: false,
         }),
         defineField({
             name: 'tags',
-            title: 'Tags (Category & Dietary)',
+            title: 'Categories & Tags',
             type: 'array',
             of: [{ type: 'string' }],
             options: {
@@ -80,19 +77,6 @@ export default defineType({
                     { title: 'Main Course', value: 'Main Course' },
                 ],
             },
-            description: 'Select tags for filtering (e.g. Veg, Starter)',
-        }),
-        defineField({
-            name: 'swiggyLink',
-            title: 'Swiggy Order Link',
-            type: 'url',
-            description: 'Direct link to order this item on Swiggy',
-        }),
-        defineField({
-            name: 'zomatoLink',
-            title: 'Zomato Order Link',
-            type: 'url',
-            description: 'Direct link to order this item on Zomato',
         }),
     ],
 })

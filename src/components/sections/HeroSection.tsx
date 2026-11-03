@@ -1,5 +1,5 @@
 import { getHeroData } from "@/lib/hero";
-import { Hero } from "@/components/sections/Hero";
+import { Hero } from "./Hero";
 
 export const revalidate = 60;
 
