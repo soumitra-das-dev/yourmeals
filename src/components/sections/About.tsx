@@ -42,11 +42,9 @@ export function About() {
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-12 md:mb-16"
                 >
-                    <div className="mb-3">
-                        <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-brand-orange">
-                            Why Choose Us
-                        </span>
-                    </div>
+                    <p className="text-sm font-semibold text-brand-orange mb-3">
+                        Jhargram Cloud Kitchen Standards
+                    </p>
                     <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
                         Why <span className="text-brand-orange">YOURMEALS?</span>
                     </h2>
@@ -62,7 +60,7 @@ export function About() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.4, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                            className="p-6 rounded-2xl bg-orange-50/40 border border-orange-100 hover:border-brand-orange/40 transition-colors duration-200 flex flex-col items-start gap-4"
+                            className="p-6 rounded-2xl bg-neutral-50/70 border border-gray-200/90 hover:border-brand-orange/40 hover:bg-white transition-colors duration-200 flex flex-col items-start gap-4"
                         >
                             <div className="w-12 h-12 rounded-xl bg-orange-100/70 text-brand-orange flex items-center justify-center shrink-0">
                                 <feature.icon className="w-6 h-6" />

@@ -31,9 +31,10 @@ export function Hero({
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center lg:text-left order-2 lg:order-1 lg:col-span-7 flex flex-col justify-center"
                 >
-                    <div className="mb-4">
-                        <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-brand-orange">
-                            Jhargram's Cloud Kitchen
+                    <div className="inline-flex items-center justify-center lg:justify-start gap-2 mb-4">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        <span className="text-sm font-semibold text-gray-700">
+                            Jhargram Cloud Kitchen &bull; Hot Daily Service
                         </span>
                     </div>
 
@@ -72,7 +73,7 @@ export function Hero({
                     <div className="flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start">
                         <Button
                             size="lg"
-                            className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold text-base h-12 px-7 rounded-xl transition-colors w-full sm:w-auto"
+                            className="bg-brand-orange hover:bg-brand-orange-dark active:scale-[0.98] text-white font-semibold text-base h-12 px-7 rounded-xl transition-colors w-full sm:w-auto"
                             asChild
                         >
                             <a
@@ -86,8 +87,7 @@ export function Hero({
 
                         <Button
                             size="lg"
-                            variant="outline"
-                            className="border-2 border-emerald-600 text-emerald-700 bg-white hover:bg-emerald-600 hover:text-white font-semibold text-base h-12 px-7 rounded-xl transition-colors w-full sm:w-auto"
+                            className="bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-semibold text-base h-12 px-7 rounded-xl transition-colors w-full sm:w-auto"
                             asChild
                         >
                             <a
@@ -101,16 +101,16 @@ export function Hero({
                     </div>
 
                     {/* Quick highlights */}
-                    <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-gray-500 font-medium">
-                        <div className="flex items-center gap-1.5">
+                    <div className="mt-8 pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-gray-600 font-medium">
+                        <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                             <span>Direct WhatsApp Orders</span>
                         </div>
-                        <div className="flex items-center gap-1.5">
+                        <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-brand-orange"></span>
                             <span>30–45 Mins Delivery</span>
                         </div>
-                        <div className="flex items-center gap-1.5">
+                        <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                             <span>Monthly Plans</span>
                         </div>
@@ -124,15 +124,19 @@ export function Hero({
                     transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                     className="relative order-1 lg:order-2 lg:col-span-5 flex justify-center items-center"
                 >
-                    <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden bg-orange-50 border border-orange-100">
+                    <div className="group relative w-full max-w-md aspect-square rounded-3xl overflow-hidden bg-orange-50 border border-orange-100">
                         <Image
                             src="https://images.unsplash.com/photo-1625398407796-82650a8c135f?q=80&w=800&auto=format&fit=crop"
                             alt="Freshly cooked Indian home meals"
                             fill
                             priority
-                            className="object-cover"
+                            className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                             sizes="(max-width: 1024px) 80vw, 400px"
                         />
+                        <div className="absolute bottom-4 left-4 bg-white/95 px-3.5 py-1.5 rounded-xl border border-orange-100 text-xs font-semibold text-gray-800 flex items-center gap-2 shadow-xs">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span>Cooked Fresh Daily</span>
+                        </div>
                     </div>
                 </motion.div>
             </div>

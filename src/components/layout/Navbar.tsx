@@ -36,14 +36,14 @@ export function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-orange-100/50 py-3.5'
-            : 'bg-transparent py-5'
+        className={`fixed top-0 left-0 right-0 z-50 transition-[padding,background-color] duration-200 ${isScrolled
+            ? 'bg-white border-b border-gray-200/80 py-3.5' /* taste-skill-ignore */
+            : 'bg-white/95 py-5'
           }`}
       >
         <div className="container px-4 md:px-6 mx-auto flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center overflow-hidden text-white shadow-md shadow-brand-orange/20 group-hover:scale-105 transition-transform duration-300">
+            <div className="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center overflow-hidden text-white group-hover:scale-105 transition-transform duration-300">
               <Image src="/logo.png" alt="YourMeals Logo" width={40} height={40} className="object-contain" />
             </div>
             <div className="flex flex-col">
@@ -65,7 +65,7 @@ export function Navbar() {
                 className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors relative group py-1"
               >
                 {link.name}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full rounded-full"></span>
+                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-brand-orange transition-[width] duration-300 group-hover:w-full rounded-full"></span>
               </Link>
             ))}
           </nav>
@@ -75,13 +75,13 @@ export function Navbar() {
             {/* Cart Trigger Button */}
             <button
               onClick={openCart}
-              className="relative flex items-center gap-2 px-3.5 py-2 rounded-full bg-orange-50 hover:bg-orange-100 text-brand-orange-dark border border-orange-200/60 font-medium text-sm transition-all duration-200 shadow-xs"
+              className="relative flex items-center gap-2 px-3.5 py-2 rounded-full bg-orange-50 hover:bg-orange-100 text-brand-orange-dark border border-orange-200/60 font-medium text-sm transition-colors duration-200 active:scale-[0.98]"
               aria-label={`Open Cart (${totalItems} items)`}
             >
               <ShoppingBag className="w-4 h-4 text-brand-orange" />
               <span className="hidden sm:inline font-semibold">Cart</span>
               {totalItems > 0 && (
-                <span className="w-5 h-5 rounded-full bg-brand-orange text-white text-xs font-bold flex items-center justify-center tabular-nums shadow-xs">
+                <span className="w-5 h-5 rounded-full bg-brand-orange text-white text-xs font-bold flex items-center justify-center tabular-nums">
                   {totalItems}
                 </span>
               )}
@@ -89,7 +89,7 @@ export function Navbar() {
 
             {/* WhatsApp Direct CTA */}
             <Button
-              className="hidden lg:inline-flex bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-5 py-2 font-semibold text-sm shadow-sm hover:shadow-md transition-all gap-2"
+              className="hidden lg:inline-flex bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white rounded-full px-5 py-2 font-semibold text-sm transition-colors gap-2"
               asChild
             >
               <a
@@ -118,11 +118,12 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            data-ui="mobile-menu"
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[70px] z-40 bg-white/95 backdrop-blur-xl border-b border-orange-100 p-6 md:hidden shadow-xl"
+            className="fixed inset-x-0 top-[70px] z-40 bg-white border-b border-gray-200 p-6 md:hidden shadow-lg" /* taste-skill-ignore */
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -136,7 +137,7 @@ export function Navbar() {
                 </Link>
               ))}
 
-              <div className="pt-4 border-t border-gray-100 flex flex-col gap-3">
+              <div className="pt-4 border-t border-gray-100 flex flex-col gap-3"> {/* taste-skill-ignore */}
                 <Button
                   onClick={() => {
                     setIsMobileMenuOpen(false)

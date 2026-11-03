@@ -20,11 +20,9 @@ export function Contact() {
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center max-w-3xl mx-auto"
                 >
-                    <div className="mb-3">
-                        <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-orange-100">
-                            Direct Kitchen Line
-                        </span>
-                    </div>
+                    <p className="text-sm font-semibold text-orange-100 mb-3">
+                        Direct Kitchen Counter
+                    </p>
                     <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
                         Ready to Order?
                     </h2>
@@ -35,7 +33,7 @@ export function Contact() {
                     <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-12">
                         <Button
                             size="lg"
-                            className="h-16 text-base sm:text-lg font-bold bg-white text-brand-orange hover:bg-orange-50 rounded-xl transition-colors"
+                            className="h-16 text-base sm:text-lg font-bold bg-white text-brand-orange hover:bg-orange-50 rounded-xl transition-colors active:scale-[0.98]"
                             asChild
                         >
                             <a href="https://wa.me/919064967577?text=Hello%20YourMeals!%20I%20would%20like%20to%20order." target="_blank" rel="noopener noreferrer">
@@ -46,7 +44,7 @@ export function Contact() {
 
                         <Button
                             size="lg"
-                            className="h-16 text-base sm:text-lg font-bold bg-brand-orange-dark text-white hover:bg-brand-orange-dark/90 border border-white/20 rounded-xl transition-colors"
+                            className="h-16 text-base sm:text-lg font-bold bg-brand-orange-dark text-white hover:bg-brand-orange-dark/90 rounded-xl transition-colors active:scale-[0.98]"
                             asChild
                         >
                             <a href="tel:+919064967577">

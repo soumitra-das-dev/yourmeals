@@ -40,11 +40,9 @@ export function Plans({ plans }: PlansProps) {
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-12 md:mb-16"
                 >
-                    <div className="mb-3">
-                        <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-brand-orange">
-                            Monthly Subscriptions
-                        </span>
-                    </div>
+                    <p className="text-sm font-semibold text-brand-orange mb-3">
+                        Jhargram Monthly Mess & Subscriptions
+                    </p>
                     <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
                         Choose Your <span className="text-brand-orange">Meal Plan</span>
                     </h2>
@@ -69,8 +67,10 @@ export function Plans({ plans }: PlansProps) {
                             }`}>
                                 <div>
                                     {plan.highlight && (
-                                        <div className="bg-brand-orange text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md mb-4 text-center w-fit mx-auto">
-                                            Most Popular
+                                        <div className="flex justify-center mb-4">
+                                            <span className="bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full text-center">
+                                                Most Popular
+                                            </span>
                                         </div>
                                     )}
 
@@ -80,7 +80,7 @@ export function Plans({ plans }: PlansProps) {
                                     {plan.subtitle && (
                                         <p className="text-gray-600 text-sm text-center mb-2">{plan.subtitle}</p>
                                     )}
-                                    <p className="text-brand-orange font-bold text-center mb-6 text-2xl font-display tracking-tight">
+                                    <p className="text-brand-orange font-bold text-center mb-6 text-2xl font-display tracking-tight tabular-nums">
                                         {plan.price}
                                     </p>
 
@@ -95,7 +95,7 @@ export function Plans({ plans }: PlansProps) {
                                 </div>
 
                                 <Button
-                                    className={`w-full py-6 text-base font-semibold rounded-xl transition-colors ${
+                                    className={`w-full py-6 text-base font-semibold rounded-xl transition-colors active:scale-[0.98] ${
                                         plan.highlight
                                             ? 'bg-brand-orange hover:bg-brand-orange-dark text-white'
                                             : 'bg-gray-900 hover:bg-gray-800 text-white'

@@ -42,10 +42,6 @@
 
 /* Custom utility classes */
 @layer utilities {
-  .text-gradient {
-    @apply bg-linear-to-r from-brand-orange to-brand-orange-dark bg-clip-text text-transparent;
-  }
-
   .section-padding {
     @apply py-12 px-6 md:py-24 md:px-8;
   }

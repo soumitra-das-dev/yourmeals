@@ -55,11 +55,9 @@ export function HowToOrder() {
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-12 md:mb-16"
                 >
-                    <div className="mb-3">
-                        <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-brand-orange">
-                            Simple Direct Ordering
-                        </span>
-                    </div>
+                    <p className="text-sm font-semibold text-brand-orange mb-3">
+                        Direct Kitchen Workflow
+                    </p>
                     <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
                         How WhatsApp Ordering Works
                     </h2>
@@ -101,7 +99,7 @@ export function HowToOrder() {
                                 </p>
                             </div>
 
-                            <div className="pt-6 mt-4 border-t border-gray-200/60 flex items-center text-xs font-semibold text-brand-orange">
+                            <div className="pt-4 flex items-center text-xs font-semibold text-brand-orange">
                                 <span>Kitchen Process</span>
                                 <ArrowRight className="w-3.5 h-3.5 ml-1" />
                             </div>
@@ -127,7 +125,7 @@ export function HowToOrder() {
 
                     <div className="flex items-center gap-3 shrink-0">
                         <Button
-                            className="bg-brand-orange hover:bg-brand-orange-dark text-white rounded-xl px-6 py-2.5 font-semibold text-sm transition-colors"
+                            className="bg-brand-orange hover:bg-brand-orange-dark active:scale-[0.98] text-white rounded-xl px-6 py-2.5 font-semibold text-sm transition-colors"
                             asChild
                         >
                             <a href="#menu">
@@ -135,7 +133,7 @@ export function HowToOrder() {
                             </a>
                         </Button>
                         <Button
-                            className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl px-6 py-2.5 font-semibold text-sm transition-colors gap-1.5"
+                            className="bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white rounded-xl px-6 py-2.5 font-semibold text-sm transition-colors gap-1.5"
                             asChild
                         >
                             <a

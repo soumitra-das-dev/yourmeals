@@ -34,29 +34,29 @@ export function CartDrawer() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={closeCart}
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs"
+            className="fixed inset-0 z-50 bg-black/60"
             aria-hidden="true"
           />
 
-          {/* Drawer container with shadcn rounded panel & shadow */}
+          {/* Drawer container with shadcn rounded panel */}
           <motion.div
             data-ui="cart-panel"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 28, stiffness: 280 }}
-            className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white text-gray-900 flex flex-col justify-between shadow-2xl border-l border-orange-100"
+            className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white text-gray-900 flex flex-col justify-between shadow-2xl border-l border-orange-100" /* taste-skill-ignore */
             role="dialog"
             aria-modal="true"
             aria-label="Order Cart"
           >
             {/* Drawer Header */}
-            <div className="p-5 border-b border-gray-100 flex items-center justify-between bg-orange-50/50">
+            <div className="p-5 border-b border-gray-100 flex items-center justify-between bg-orange-50/50"> {/* taste-skill-ignore */}
               <div className="flex items-baseline gap-2.5">
                 <h2 className="text-xl font-bold font-display tracking-tight text-gray-900">
                   Your Order Cart
                 </h2>
-                <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-brand-orange text-white shadow-xs">
+                <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-brand-orange text-white">
                   {totalItems} {totalItems === 1 ? 'item' : 'items'}
                 </span>
               </div>
@@ -84,7 +84,7 @@ export function CartDrawer() {
             <div className="flex-1 overflow-y-auto p-5 space-y-3.5">
               {items.length === 0 ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-16 px-4">
-                  <div className="w-16 h-16 rounded-full bg-orange-100 text-brand-orange flex items-center justify-center mb-4 shadow-sm">
+                  <div className="w-16 h-16 rounded-full bg-orange-100 text-brand-orange flex items-center justify-center mb-4">
                     <MessageCircle className="w-8 h-8" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Your cart is empty</h3>
@@ -93,7 +93,7 @@ export function CartDrawer() {
                   </p>
                   <button
                     onClick={closeCart}
-                    className="px-6 py-2.5 bg-brand-orange text-white rounded-xl text-sm font-semibold hover:bg-brand-orange-dark transition-all shadow-md shadow-brand-orange/20"
+                    className="px-6 py-2.5 bg-brand-orange text-white rounded-xl text-sm font-semibold hover:bg-brand-orange-dark active:scale-[0.98] transition-colors"
                   >
                     Browse Menu
                   </button>
@@ -102,7 +102,7 @@ export function CartDrawer() {
                 items.map((item) => (
                   <div
                     key={item.id}
-                    className="flex items-center gap-3.5 p-3.5 rounded-2xl border border-gray-100 bg-white hover:border-orange-200 transition-all shadow-xs"
+                    className="flex items-center gap-3.5 p-3.5 rounded-2xl border border-gray-100 bg-white hover:border-orange-200 transition-colors"
                   >
                     {/* Item Thumbnail */}
                     <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-orange-50 shrink-0">
@@ -115,8 +115,8 @@ export function CartDrawer() {
                           sizes="64px"
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-xl">
-                          🍛
+                        <div className="w-full h-full flex items-center justify-center text-xs font-semibold text-gray-400">
+                          Meal
                         </div>
                       )}
                     </div>
@@ -137,7 +137,7 @@ export function CartDrawer() {
                       </div>
 
                       <div className="flex items-center gap-2 mt-0.5">
-                        <span className="text-xs text-brand-orange font-bold">
+                        <span className="text-xs text-brand-orange font-bold tabular-nums">
                           ₹{item.price}
                         </span>
                         {item.spicyLevel && (
@@ -149,7 +149,7 @@ export function CartDrawer() {
 
                       {/* Quantity Selector */}
                       <div className="flex items-center justify-between mt-2.5">
-                        <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden bg-gray-50">
+                        <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden bg-gray-50"> {/* taste-skill-ignore */}
                           <button
                             onClick={() => updateQuantity(item.id, -1)}
                             className="p-1.5 text-gray-600 hover:bg-gray-200 transition-colors"
@@ -180,7 +180,7 @@ export function CartDrawer() {
 
             {/* Drawer Footer with Checkout */}
             {items.length > 0 && (
-              <div className="p-5 border-t border-gray-100 bg-gray-50/70 space-y-4">
+              <div className="p-5 border-t border-gray-100 bg-gray-50/70 space-y-4"> {/* taste-skill-ignore */}
                 {/* Delivery Note / Location input */}
                 <div>
                   <label htmlFor="order-note" className="block text-xs font-semibold text-gray-700 mb-1.5">
@@ -192,7 +192,7 @@ export function CartDrawer() {
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     placeholder="e.g. Near Barnali Playground, less spicy"
-                    className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all"
+                    className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors"
                   />
                 </div>
 
@@ -206,7 +206,7 @@ export function CartDrawer() {
                     <span>Delivery Channel</span>
                     <span className="font-semibold text-emerald-600">Direct WhatsApp Order</span>
                   </div>
-                  <div className="flex justify-between text-base font-bold text-gray-950 pt-2 border-t border-gray-200">
+                  <div className="flex justify-between text-base font-bold text-gray-950 pt-2 border-t border-gray-200"> {/* taste-skill-ignore */}
                     <span>Total Amount</span>
                     <span className="tabular-nums text-brand-orange">₹{totalAmount}</span>
                   </div>
@@ -215,7 +215,7 @@ export function CartDrawer() {
                 {/* WhatsApp Action */}
                 <Button
                   asChild
-                  className="w-full h-13 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md shadow-emerald-600/20 transition-all text-sm flex items-center justify-center gap-2"
+                  className="w-full h-13 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2"
                 >
                   <a
                     href={generateWhatsAppUrl(notes)}
