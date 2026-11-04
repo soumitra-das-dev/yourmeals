@@ -68,7 +68,7 @@ export function Contact() {
                             className="flex items-center gap-1.5 hover:text-white underline decoration-white/40 hover:decoration-white transition-colors"
                         >
                             <InstagramIcon className="w-4 h-4 text-orange-200" />
-                            <span>@yourmeals.in</span>
+                            <span>@yourmealskitchen</span>
                         </a>
                     </div>
                 </motion.div>
