@@ -1,6 +1,6 @@
 import {
   Navbar,
-  Footer,
+  FooterSection,
   BackToTop,
   HeroSection,
   About,
@@ -22,7 +22,7 @@ export default function Home() {
       <HowToOrder />
       <TestimonialsSection />
       <Contact />
-      <Footer />
+      <FooterSection />
       <BackToTop />
     </main>
   );

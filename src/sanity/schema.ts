@@ -5,7 +5,8 @@ import menuItems from './schemas/menuItems'
 import plans from './schemas/plans'
 import testimonials from './schemas/testimonials'
 import contact from './schemas/contact'
+import footer from './schemas/footer'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-    types: [hero, menuItems, plans, testimonials, contact],
+    types: [hero, menuItems, plans, testimonials, contact, footer],
 }

@@ -1,11 +1,37 @@
 'use client';
 
-import { Utensils, MessageCircle, MapPin, Mail, Phone, ArrowRight, Heart, AtSign } from 'lucide-react';
-import { InstagramIcon, FacebookIcon, TwitterIcon, YoutubeIcon, LinkedinIcon } from '@/components/ui/brand-icons';
+import {
+    Utensils,
+    MessageCircle,
+    MapPin,
+    Mail,
+    Phone,
+    ArrowRight,
+    Heart,
+    AtSign,
+    SlidersHorizontal,
+} from 'lucide-react';
+import {
+    InstagramIcon,
+    FacebookIcon,
+    TwitterIcon,
+    YoutubeIcon,
+    LinkedinIcon,
+} from '@/components/ui/brand-icons';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FooterData, DUMMY_FOOTER } from '@/lib/dummy-data';
 
-export function Footer() {
+interface FooterProps {
+    data?: FooterData;
+}
+
+export function Footer({ data = DUMMY_FOOTER }: FooterProps) {
+    const footer = {
+        ...DUMMY_FOOTER,
+        ...data,
+    };
+
     return (
         <footer className="bg-zinc-50 dark:bg-black py-20 border-t border-border/50 relative overflow-hidden"> {/* taste-skill-ignore */}
             <div className="container px-6 md:px-6 relative z-10 mx-auto max-w-7xl">
@@ -14,42 +40,98 @@ export function Footer() {
                     <div className="space-y-6">
                         <div className="flex items-center gap-3">
                             <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white overflow-hidden">
-                                <Image src="/logo.png" alt="Logo" width={24} height={24} className='w-full h-full object-contain' />
+                                <Image src="/logo.png" alt="Logo" width={24} height={24} className="w-full h-full object-contain" />
                             </div>
-                            <span className="text-2xl font-bold font-heading tracking-tight">YOURMEALSKITCHEN.COM</span>
+                            <span className="text-2xl font-bold font-heading tracking-tight">{footer.brandName}</span>
                         </div>
                         <p className="text-muted-foreground leading-relaxed">
-                            Bringing the authentic taste of homemade Indian cuisine to your doorstep. Fresh, spicy, and delivered with love in Jhargram.
+                            {footer.tagline}
                         </p>
                         <div className="flex flex-wrap gap-3">
-                            <Link href="https://www.instagram.com/yourmeals.in" title="Instagram" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-pink-500 hover:border-pink-500 transition-colors duration-200">
-                                <InstagramIcon className="w-5 h-5" />
-                                <span className="sr-only">Instagram</span>
-                            </Link>
-                            <Link href="https://wa.me/919064967577" title="WhatsApp" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-emerald-600 hover:border-emerald-600 transition-colors duration-200">
-                                <MessageCircle className="w-5 h-5" />
-                                <span className="sr-only">WhatsApp</span>
-                            </Link>
-                            <Link href="https://www.facebook.com/share/1GNZAucfKd/" title="Facebook" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-blue-600 hover:border-blue-600 transition-colors duration-200">
-                                <FacebookIcon className="w-5 h-5" />
-                                <span className="sr-only">Facebook</span>
-                            </Link>
-                            <Link href="https://www.threads.com/@yourmeals.in" title="Threads" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-gray-900 dark:hover:text-white hover:border-gray-900 dark:hover:border-white transition-colors duration-200">
-                                <AtSign className="w-5 h-5" />
-                                <span className="sr-only">Threads</span>
-                            </Link>
-                            <Link href="https://x.com/Yourmeals_in" title="X (Twitter)" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-colors duration-200">
-                                <TwitterIcon className="w-5 h-5" />
-                                <span className="sr-only">X (Twitter)</span>
-                            </Link>
-                            <Link href="https://www.youtube.com/@yourmealskitchen" title="YouTube" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-red-500 hover:border-red-500 transition-colors duration-200">
-                                <YoutubeIcon className="w-5 h-5" />
-                                <span className="sr-only">YouTube</span>
-                            </Link>
-                            <Link href="https://www.linkedin.com/company/yourmeals/" title="LinkedIn" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-blue-500 hover:border-blue-500 transition-colors duration-200">
-                                <LinkedinIcon className="w-5 h-5" />
-                                <span className="sr-only">LinkedIn</span>
-                            </Link>
+                            {footer.instagramUrl && (
+                                <Link
+                                    href={footer.instagramUrl}
+                                    title="Instagram"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-pink-500 hover:border-pink-500 transition-colors duration-200"
+                                >
+                                    <InstagramIcon className="w-5 h-5" />
+                                    <span className="sr-only">Instagram</span>
+                                </Link>
+                            )}
+                            {footer.whatsappUrl && (
+                                <Link
+                                    href={footer.whatsappUrl}
+                                    title="WhatsApp"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-emerald-600 hover:border-emerald-600 transition-colors duration-200"
+                                >
+                                    <MessageCircle className="w-5 h-5" />
+                                    <span className="sr-only">WhatsApp</span>
+                                </Link>
+                            )}
+                            {footer.facebookUrl && (
+                                <Link
+                                    href={footer.facebookUrl}
+                                    title="Facebook"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-blue-600 hover:border-blue-600 transition-colors duration-200"
+                                >
+                                    <FacebookIcon className="w-5 h-5" />
+                                    <span className="sr-only">Facebook</span>
+                                </Link>
+                            )}
+                            {footer.threadsUrl && (
+                                <Link
+                                    href={footer.threadsUrl}
+                                    title="Threads"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-gray-900 dark:hover:text-white hover:border-gray-900 dark:hover:border-white transition-colors duration-200"
+                                >
+                                    <AtSign className="w-5 h-5" />
+                                    <span className="sr-only">Threads</span>
+                                </Link>
+                            )}
+                            {footer.twitterUrl && (
+                                <Link
+                                    href={footer.twitterUrl}
+                                    title="X (Twitter)"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-colors duration-200"
+                                >
+                                    <TwitterIcon className="w-5 h-5" />
+                                    <span className="sr-only">X (Twitter)</span>
+                                </Link>
+                            )}
+                            {footer.youtubeUrl && (
+                                <Link
+                                    href={footer.youtubeUrl}
+                                    title="YouTube"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-red-500 hover:border-red-500 transition-colors duration-200"
+                                >
+                                    <YoutubeIcon className="w-5 h-5" />
+                                    <span className="sr-only">YouTube</span>
+                                </Link>
+                            )}
+                            {footer.linkedinUrl && (
+                                <Link
+                                    href={footer.linkedinUrl}
+                                    title="LinkedIn"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-blue-500 hover:border-blue-500 transition-colors duration-200"
+                                >
+                                    <LinkedinIcon className="w-5 h-5" />
+                                    <span className="sr-only">LinkedIn</span>
+                                </Link>
+                            )}
                         </div>
                     </div>
 
@@ -63,7 +145,16 @@ export function Footer() {
                                 { name: 'Meal Plans', href: '/#plans' },
                                 { name: 'About Us', href: '/#about' },
                                 { name: 'Contact', href: '/#contact' },
-                                { name: 'Order via WhatsApp', href: 'https://wa.me/919064967577?text=Hello%20YourMeals!%20I%20would%20like%20to%20order.', external: true },
+                                {
+                                    name: 'Order via WhatsApp',
+                                    href: footer.whatsappUrl || 'https://wa.me/919064967577',
+                                    external: true,
+                                },
+                                {
+                                    name: 'Update Data in Sanity Studio',
+                                    href: '/studio',
+                                    external: true,
+                                },
                             ].map((item) => (
                                 <li key={item.name}>
                                     <Link
@@ -72,7 +163,7 @@ export function Footer() {
                                         className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                                     >
                                         <ArrowRight className="w-3 h-3 opacity-0 -ml-3 group-hover:opacity-100 group-hover:ml-0 transition-[opacity,margin] duration-200" />
-                                        {item.name}
+                                        <span>{item.name}</span>
                                     </Link>
                                 </li>
                             ))}
@@ -85,30 +176,57 @@ export function Footer() {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3 text-muted-foreground">
                                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
-                                <span>Near Barnali Playground, Uttar Bamda,<br />Jhargram, West Bengal 721507</span>
+                                <span>{footer.address}</span>
                             </li>
-                            <li className="flex items-center gap-3 text-muted-foreground">
-                                <Phone className="w-5 h-5 text-primary shrink-0" />
-                                <a href="tel:+919064967577" className="hover:text-primary transition-colors">+91 90649 67577</a>
-                            </li>
-                            <li className="flex items-center gap-3 text-muted-foreground">
-                                <MessageCircle className="w-5 h-5 text-emerald-600 shrink-0" />
-                                <a href="https://wa.me/919064967577" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">
-                                    WhatsApp: +91 90649 67577
-                                </a>
-                            </li>
-                            <li className="flex items-center gap-3 text-muted-foreground">
-                                <Mail className="w-5 h-5 text-primary shrink-0" />
-                                <a href="mailto:hello@yourmealskitchen.com" className="hover:text-primary transition-colors">
-                                    hello@yourmealskitchen.com
-                                </a>
-                            </li>
+                            {footer.phone && (
+                                <li className="flex items-center gap-3 text-muted-foreground">
+                                    <Phone className="w-5 h-5 text-primary shrink-0" />
+                                    <a href={`tel:${footer.phone.replace(/\s+/g, '')}`} className="hover:text-primary transition-colors">
+                                        {footer.phone}
+                                    </a>
+                                </li>
+                            )}
+                            {footer.whatsappNumber && (
+                                <li className="flex items-center gap-3 text-muted-foreground">
+                                    <MessageCircle className="w-5 h-5 text-emerald-600 shrink-0" />
+                                    <a
+                                        href={footer.whatsappUrl || `https://wa.me/${footer.whatsappNumber.replace(/[^0-9]/g, '')}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-emerald-600 transition-colors"
+                                    >
+                                        WhatsApp: {footer.whatsappNumber}
+                                    </a>
+                                </li>
+                            )}
+                            {footer.email && (
+                                <li className="flex items-center gap-3 text-muted-foreground">
+                                    <Mail className="w-5 h-5 text-primary shrink-0" />
+                                    <a href={`mailto:${footer.email}`} className="hover:text-primary transition-colors">
+                                        {footer.email}
+                                    </a>
+                                </li>
+                            )}
                         </ul>
                     </div>
                 </div>
 
                 <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground"> {/* taste-skill-ignore */}
-                    <p>&copy; {new Date().getFullYear()} YOURMEALSKITCHEN.COM. All rights reserved.</p>
+                    <div className="flex flex-wrap items-center gap-3">
+                        <p>&copy; {new Date().getFullYear()} {footer.copyrightText || footer.brandName}. All rights reserved.</p>
+                        <span className="hidden sm:inline text-gray-300">•</span>
+                        <Link
+                            href="/studio"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold text-gray-600 hover:text-brand-orange bg-zinc-100 hover:bg-orange-50 border border-gray-200 transition-colors"
+                            title="Open Sanity Studio to update dishes, plans, reviews & footer data"
+                        >
+                            <SlidersHorizontal className="w-3.5 h-3.5" />
+                            <span>Update in Sanity Studio</span>
+                        </Link>
+                    </div>
+
                     <p className="flex items-center gap-1">
                         Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by{' '}
                         <Link

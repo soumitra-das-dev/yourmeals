@@ -1,5 +1,5 @@
 import { getMenuItems } from "@/lib/menu";
-import { Navbar, Footer, MenuGrid, Button } from "@/components";
+import { Navbar, FooterSection, MenuGrid, Button } from "@/components";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -32,7 +32,7 @@ export default async function MenuPage() {
         />
       </div>
 
-      <Footer />
+      <FooterSection />
     </main>
   );
 }
