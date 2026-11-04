@@ -1,6 +1,7 @@
 'use client';
 
-import { Utensils, Instagram, MessageCircle, MapPin, Mail, Phone, ArrowRight, Heart, Facebook, Twitter, Youtube, Linkedin, AtSign } from 'lucide-react';
+import { Utensils, MessageCircle, MapPin, Mail, Phone, ArrowRight, Heart, AtSign } from 'lucide-react';
+import { InstagramIcon, FacebookIcon, TwitterIcon, YoutubeIcon, LinkedinIcon } from '@/components/ui/brand-icons';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -22,7 +23,7 @@ export function Footer() {
                         </p>
                         <div className="flex flex-wrap gap-3">
                             <Link href="https://www.instagram.com/yourmeals.in" title="Instagram" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-pink-500 hover:border-pink-500 transition-colors duration-200">
-                                <Instagram className="w-5 h-5" />
+                                <InstagramIcon className="w-5 h-5" />
                                 <span className="sr-only">Instagram</span>
                             </Link>
                             <Link href="https://wa.me/919064967577" title="WhatsApp" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-emerald-600 hover:border-emerald-600 transition-colors duration-200">
@@ -30,7 +31,7 @@ export function Footer() {
                                 <span className="sr-only">WhatsApp</span>
                             </Link>
                             <Link href="https://www.facebook.com/share/1GNZAucfKd/" title="Facebook" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-blue-600 hover:border-blue-600 transition-colors duration-200">
-                                <Facebook className="w-5 h-5" />
+                                <FacebookIcon className="w-5 h-5" />
                                 <span className="sr-only">Facebook</span>
                             </Link>
                             <Link href="https://www.threads.com/@yourmeals.in" title="Threads" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-gray-900 dark:hover:text-white hover:border-gray-900 dark:hover:border-white transition-colors duration-200">
@@ -38,15 +39,15 @@ export function Footer() {
                                 <span className="sr-only">Threads</span>
                             </Link>
                             <Link href="https://x.com/Yourmeals_in" title="X (Twitter)" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-colors duration-200">
-                                <Twitter className="w-5 h-5" />
+                                <TwitterIcon className="w-5 h-5" />
                                 <span className="sr-only">X (Twitter)</span>
                             </Link>
                             <Link href="https://www.youtube.com/@yourmealskitchen" title="YouTube" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-red-500 hover:border-red-500 transition-colors duration-200">
-                                <Youtube className="w-5 h-5" />
+                                <YoutubeIcon className="w-5 h-5" />
                                 <span className="sr-only">YouTube</span>
                             </Link>
                             <Link href="https://www.linkedin.com/company/yourmeals/" title="LinkedIn" target="_blank" className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-border flex items-center justify-center text-muted-foreground hover:text-blue-500 hover:border-blue-500 transition-colors duration-200">
-                                <Linkedin className="w-5 h-5" />
+                                <LinkedinIcon className="w-5 h-5" />
                                 <span className="sr-only">LinkedIn</span>
                             </Link>
                         </div>

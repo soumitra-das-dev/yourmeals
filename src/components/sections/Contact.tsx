@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Button } from '@/components/ui/button'
-import { Phone, MessageCircle, Instagram, MapPin } from 'lucide-react'
+import { Phone, MessageCircle, MapPin } from 'lucide-react'
+import { InstagramIcon } from '@/components/ui/brand-icons'
 
 export function Contact() {
     const [ref, inView] = useInView({
@@ -66,7 +67,7 @@ export function Contact() {
                             rel="noopener noreferrer"
                             className="flex items-center gap-1.5 hover:text-white underline decoration-white/40 hover:decoration-white transition-colors"
                         >
-                            <Instagram className="w-4 h-4 text-orange-200" />
+                            <InstagramIcon className="w-4 h-4 text-orange-200" />
                             <span>@yourmeals.in</span>
                         </a>
                     </div>

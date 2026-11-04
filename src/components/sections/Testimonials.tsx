@@ -1,7 +1,8 @@
 'use client'
 
 import Marquee from '@/components/ui/marquee';
-import { Star, Instagram, MessageCircle } from 'lucide-react';
+import { Star, MessageCircle } from 'lucide-react';
+import { InstagramIcon } from '@/components/ui/brand-icons';
 
 interface TestimonialData {
     _id: string;
@@ -31,7 +32,7 @@ const TestimonialCard = ({ name, review, platform }: { name: string; review: str
                 </div>
                 <div className="ml-auto">
                     {isInstagram ? (
-                        <Instagram className="w-4 h-4 text-pink-500" />
+                        <InstagramIcon className="w-4 h-4 text-pink-500" />
                     ) : (
                         <MessageCircle className="w-4 h-4 text-emerald-600" />
                     )}
