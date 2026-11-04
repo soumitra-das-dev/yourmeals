@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   description: 'Fresh, delicious, home-cooked Indian meals for students and working professionals in Jhargram. Direct kitchen ordering via WhatsApp. Monthly plans available.',
   keywords: ['food delivery Jhargram', 'cloud kitchen Jhargram', 'homely food Jhargram', 'student meals', 'office lunch', 'YourMeals', 'WhatsApp food order', 'tiffin service Jhargram'],
   authors: [{ name: 'YourMeals' }],
-  metadataBase: new URL('https://yourmeals.in'),
+  metadataBase: new URL('https://yourmealskitchen.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://yourmeals.in',
+    url: 'https://yourmealskitchen.com',
     title: 'YourMeals - Homely Food Delivery in Jhargram',
     description: 'Fresh, delicious Indian meals delivered to your doorstep in Jhargram directly through WhatsApp.',
     siteName: 'YourMeals',

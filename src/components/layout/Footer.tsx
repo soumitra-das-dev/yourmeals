@@ -16,7 +16,7 @@ export function Footer() {
                             <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white overflow-hidden">
                                 <Image src="/logo.png" alt="Logo" width={24} height={24} className='w-full h-full object-contain' />
                             </div>
-                            <span className="text-2xl font-bold font-heading tracking-tight">YOURMEALS.IN</span>
+                            <span className="text-2xl font-bold font-heading tracking-tight">YOURMEALSKITCHEN.COM</span>
                         </div>
                         <p className="text-muted-foreground leading-relaxed">
                             Bringing the authentic taste of homemade Indian cuisine to your doorstep. Fresh, spicy, and delivered with love in Jhargram.
@@ -99,14 +99,16 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3 text-muted-foreground">
                                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                                <span>yourmealskitchen@gmail.com</span>
+                                <a href="mailto:hello@yourmealskitchen.com" className="hover:text-primary transition-colors">
+                                    hello@yourmealskitchen.com
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground"> {/* taste-skill-ignore */}
-                    <p>&copy; {new Date().getFullYear()} YOURMEALS.IN. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} YOURMEALSKITCHEN.COM. All rights reserved.</p>
                     <p className="flex items-center gap-1">
                         Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by{' '}
                         <Link

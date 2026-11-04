@@ -1,6 +1,6 @@
-# YourMeals.in Landing Page
+# YourMealsKitchen.com Landing Page
 
-A modern, high-performance landing page for YourMeals.in cloud kitchen, built with Next.js 15, Tailwind CSS, Framer Motion, and Sanity.io.
+A modern, high-performance landing page for YourMealsKitchen.com cloud kitchen, built with Next.js 16, Tailwind CSS, Framer Motion, and Sanity.io.
 
 ## Features
 - **Antigravity Aesthetic**: Floating elements, smooth parallax, and glassmorphism.
