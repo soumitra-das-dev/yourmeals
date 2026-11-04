@@ -1,19 +1,31 @@
 import { client } from "@/sanity/client";
-import { DUMMY_FOOTER, FooterData } from "./dummy-data";
 
-export async function getFooterData(): Promise<FooterData> {
+export interface FooterData {
+    _id?: string;
+    brandName?: string;
+    tagline?: string;
+    phone?: string;
+    whatsappNumber?: string;
+    email?: string;
+    address?: string;
+    instagramUrl?: string;
+    whatsappUrl?: string;
+    facebookUrl?: string;
+    threadsUrl?: string;
+    twitterUrl?: string;
+    youtubeUrl?: string;
+    linkedinUrl?: string;
+    copyrightText?: string;
+}
+
+export async function getFooterData(): Promise<FooterData | null> {
     try {
         if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
             const footer = await client.fetch(`*[_type == "footer"][0]`);
-            if (footer) {
-                return {
-                    ...DUMMY_FOOTER,
-                    ...footer,
-                };
-            }
+            return footer || null;
         }
     } catch (error) {
-        console.warn("Notice: Fetching footer data from Sanity fell back to local data:", error);
+        console.error("Failed to fetch footer data from Sanity:", error);
     }
-    return DUMMY_FOOTER;
+    return null;
 }

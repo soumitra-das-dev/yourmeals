@@ -1,5 +1,4 @@
 import { client } from "@/sanity/client";
-import { DUMMY_HERO } from "./dummy-data";
 
 export interface HeroData {
     title?: string;
@@ -11,14 +10,14 @@ export interface HeroData {
     ctaLink2?: string;
 }
 
-export async function getHeroData(): Promise<HeroData> {
+export async function getHeroData(): Promise<HeroData | null> {
     try {
         if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
             const data = await client.fetch(`*[_type == "hero"][0]`);
-            if (data) return data;
+            return data || null;
         }
     } catch (error) {
-        console.warn("Notice: Fetching hero data from Sanity fell back to local data:", error);
+        console.error("Failed to fetch hero data from Sanity:", error);
     }
-    return DUMMY_HERO;
+    return null;
 }

@@ -7,3 +7,4 @@ export default async function FooterSection() {
     const footerData = await getFooterData();
     return <Footer data={footerData} />;
 }
+

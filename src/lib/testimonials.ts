@@ -1,5 +1,4 @@
 import { client } from "@/sanity/client";
-import { DUMMY_TESTIMONIALS } from "./dummy-data";
 
 export interface TestimonialItem {
     _id: string;
@@ -13,12 +12,10 @@ export async function getTestimonials(): Promise<TestimonialItem[]> {
     try {
         if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
             const testimonials = await client.fetch(`*[_type == "testimonial"] | order(_createdAt asc)`);
-            if (testimonials && testimonials.length > 0) {
-                return testimonials;
-            }
+            return testimonials || [];
         }
     } catch (error) {
-        console.warn("Notice: Fetching testimonials from Sanity fell back to local data:", error);
+        console.error("Failed to fetch testimonials:", error);
     }
-    return DUMMY_TESTIMONIALS;
+    return [];
 }

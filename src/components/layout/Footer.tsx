@@ -20,16 +20,33 @@ import {
 } from '@/components/ui/brand-icons';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FooterData, DUMMY_FOOTER } from '@/lib/dummy-data';
+import { FooterData } from '@/lib/footer';
 
 interface FooterProps {
-    data?: FooterData;
+    data?: FooterData | null;
 }
 
-export function Footer({ data = DUMMY_FOOTER }: FooterProps) {
+const DEFAULT_FOOTER: FooterData = {
+    brandName: 'YOURMEALSKITCHEN.COM',
+    tagline: 'Bringing the authentic taste of homemade Indian cuisine to your doorstep. Fresh, spicy, and delivered with love in Jhargram.',
+    phone: '+91 90649 67577',
+    whatsappNumber: '+91 90649 67577',
+    email: 'hello@yourmealskitchen.com',
+    address: 'Near Barnali Playground, Uttar Bamda, Jhargram, West Bengal 721507',
+    instagramUrl: 'https://www.instagram.com/yourmeals.in',
+    whatsappUrl: 'https://wa.me/919064967577',
+    facebookUrl: 'https://www.facebook.com/share/1GNZAucfKd/',
+    threadsUrl: 'https://www.threads.com/@yourmeals.in',
+    twitterUrl: 'https://x.com/Yourmeals_in',
+    youtubeUrl: 'https://www.youtube.com/@yourmealskitchen',
+    linkedinUrl: 'https://www.linkedin.com/company/yourmeals/',
+    copyrightText: 'YOURMEALSKITCHEN.COM',
+};
+
+export function Footer({ data }: FooterProps) {
     const footer = {
-        ...DUMMY_FOOTER,
-        ...data,
+        ...DEFAULT_FOOTER,
+        ...(data || {}),
     };
 
     return (
