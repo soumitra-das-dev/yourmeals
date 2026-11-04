@@ -39,9 +39,9 @@ const TestimonialCard = ({ name, review, platform }: { name: string; review: str
                 </div>
             </div>
 
-            <p className="text-gray-600 text-sm italic mb-4 flex-1 line-clamp-3 leading-relaxed">&ldquo;{review}&rdquo;</p>
+            <p className="text-gray-600 text-sm italic flex-1 line-clamp-3 leading-relaxed">&ldquo;{review}&rdquo;</p>
 
-            <div className="flex text-amber-500 gap-1">
+            <div className="flex text-amber-500 gap-1 mt-6">
                 {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-current" />)}
             </div>
         </div>
@@ -54,9 +54,6 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
             <section id="testimonials" className="section-padding bg-gray-50/50">
                 <div className="container px-4 md:px-6 mx-auto max-w-7xl">
                     <div className="text-center mb-8">
-                        <p className="text-sm font-semibold text-brand-orange mb-3">
-                            Jhargram Dining Community
-                        </p>
                         <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
                             What Our <span className="text-brand-orange">Customers Say</span>
                         </h2>
@@ -79,9 +76,6 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
         <section id="testimonials" className="section-padding bg-gray-50/50">
             <div className="container px-4 md:px-6 mx-auto max-w-7xl">
                 <div className="text-center mb-12 md:mb-16">
-                    <p className="text-sm font-semibold text-brand-orange mb-3">
-                        Jhargram Dining Community
-                    </p>
                     <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
                         What Our <span className="text-brand-orange">Customers Say</span>
                     </h2>

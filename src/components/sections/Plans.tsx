@@ -40,9 +40,6 @@ export function Plans({ plans }: PlansProps) {
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-12 md:mb-16"
                 >
-                    <p className="text-sm font-semibold text-brand-orange mb-3">
-                        Jhargram Monthly Mess & Subscriptions
-                    </p>
                     <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
                         Choose Your <span className="text-brand-orange">Meal Plan</span>
                     </h2>
@@ -60,11 +57,10 @@ export function Plans({ plans }: PlansProps) {
                             transition={{ duration: 0.4, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
                             className="h-full flex"
                         >
-                            <Card className={`p-8 rounded-2xl h-full flex flex-col justify-between transition-colors duration-200 w-full ${
-                                plan.highlight
+                            <Card className={`p-8 rounded-2xl h-full flex flex-col justify-between transition-colors duration-200 w-full ${plan.highlight
                                     ? 'border-2 border-brand-orange bg-white'
                                     : 'border border-gray-200 hover:border-gray-300 bg-white'
-                            }`}>
+                                }`}>
                                 <div>
                                     {plan.highlight && (
                                         <div className="flex justify-center mb-4">
@@ -95,11 +91,10 @@ export function Plans({ plans }: PlansProps) {
                                 </div>
 
                                 <Button
-                                    className={`w-full py-6 text-base font-semibold rounded-xl transition-colors active:scale-[0.98] ${
-                                        plan.highlight
+                                    className={`w-full py-6 text-base font-semibold rounded-xl transition-colors active:scale-[0.98] ${plan.highlight
                                             ? 'bg-brand-orange hover:bg-brand-orange-dark text-white'
                                             : 'bg-gray-900 hover:bg-gray-800 text-white'
-                                    }`}
+                                        }`}
                                     size="lg"
                                     asChild
                                 >

@@ -42,9 +42,6 @@ export function About() {
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-12 md:mb-16"
                 >
-                    <p className="text-sm font-semibold text-brand-orange mb-3">
-                        Jhargram Cloud Kitchen Standards
-                    </p>
                     <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
                         Why <span className="text-brand-orange">YOURMEALS?</span>
                     </h2>

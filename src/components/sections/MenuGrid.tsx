@@ -72,9 +72,6 @@ export default function MenuGrid({
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <p className="text-sm font-semibold text-brand-orange mb-3">
-                            Fresh Daily Kitchen Batches
-                        </p>
                         <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
                             {title.includes("Featured") ? (
                                 <>Our <span className="text-brand-orange">Featured Menu</span></>
@@ -108,11 +105,10 @@ export default function MenuGrid({
                             <button
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
-                                className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${
-                                    activeCategory === cat
-                                        ? 'bg-brand-orange text-white'
-                                        : 'bg-gray-50 border border-gray-200 text-gray-700 hover:bg-gray-100'
-                                }`}
+                                className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${activeCategory === cat
+                                    ? 'bg-brand-orange text-white'
+                                    : 'bg-gray-50 border border-gray-200 text-gray-700 hover:bg-gray-100'
+                                    }`}
                             >
                                 {cat}
                             </button>
@@ -125,15 +121,14 @@ export default function MenuGrid({
                             <button
                                 key={diet}
                                 onClick={() => setActiveDietary(diet)}
-                                className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${
-                                    activeDietary === diet
-                                        ? (diet === 'Veg'
-                                            ? 'bg-emerald-600 text-white'
-                                            : diet === 'Non-Veg'
+                                className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${activeDietary === diet
+                                    ? (diet === 'Veg'
+                                        ? 'bg-emerald-600 text-white'
+                                        : diet === 'Non-Veg'
                                             ? 'bg-rose-600 text-white'
                                             : 'bg-gray-900 text-white')
-                                        : 'bg-gray-50 border border-gray-200 text-gray-700 hover:bg-gray-100'
-                                }`}
+                                    : 'bg-gray-50 border border-gray-200 text-gray-700 hover:bg-gray-100'
+                                    }`}
                             >
                                 {diet === 'Veg' && <span className="mr-1.5 inline-block w-2 h-2 rounded-full bg-emerald-400"></span>}
                                 {diet === 'Non-Veg' && <span className="mr-1.5 inline-block w-2 h-2 rounded-full bg-rose-400"></span>}
@@ -230,11 +225,10 @@ export default function MenuGrid({
                                     <div className="p-5 pt-0 flex items-center gap-2">
                                         <Button
                                             onClick={() => handleAddToCart(item)}
-                                            className={`flex-1 rounded-xl py-2 text-xs font-semibold transition-colors gap-1.5 active:scale-[0.98] ${
-                                                cartQty > 0
-                                                    ? 'bg-emerald-700 hover:bg-emerald-800 text-white'
-                                                    : 'bg-gray-900 hover:bg-brand-orange text-white'
-                                            }`}
+                                            className={`flex-1 rounded-xl py-2 text-xs font-semibold transition-colors gap-1.5 active:scale-[0.98] ${cartQty > 0
+                                                ? 'bg-emerald-700 hover:bg-emerald-800 text-white'
+                                                : 'bg-gray-900 hover:bg-brand-orange text-white'
+                                                }`}
                                         >
                                             <Plus className="w-3.5 h-3.5" />
                                             <span>{cartQty > 0 ? `Added (${cartQty})` : 'Add to Order'}</span>
@@ -264,7 +258,7 @@ export default function MenuGrid({
                 )}
 
                 {/* View All button */}
-                {showViewAll && (
+                {(showViewAll && !!visibleItems.length) && (
                     <div className="text-center">
                         <Button
                             size="lg"
